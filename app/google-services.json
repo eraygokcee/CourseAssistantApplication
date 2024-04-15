@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "452404370111",
+    "project_id": "login-register-cb6a8",
+    "storage_bucket": "login-register-cb6a8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:452404370111:android:988a82ba34beadb3d3040a",
+        "android_client_info": {
+          "package_name": "com.eray.myapp1"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBH3IhK5-HeUHfwKWTDIDgoKM12s-sIypc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
