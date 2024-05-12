@@ -53,6 +53,8 @@ public class Login extends AppCompatActivity {
                 if (TextUtils.isEmpty(password)){
                     mPassword.setError("Password is required");
                 }
+                String domain = email.substring(email.indexOf("@") + 1);
+
 
                 fAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
@@ -62,7 +64,11 @@ public class Login extends AppCompatActivity {
                             if (user.isEmailVerified()) {
                                 // E-posta doğrulanmış, ana ekrana git
                                 Toast.makeText(Login.this, "Logged in Successfully", Toast.LENGTH_SHORT).show();
-                                startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                                if(domain.equals("std.yildiz.edu.tr")){
+                                    startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                                } else if (domain.equals("gmail.com")) {
+                                    startActivity(new Intent(getApplicationContext(), teacherMain.class));
+                                }
                             } else {
                                 // E-posta doğrulanmamış, kullanıcıyı uyar ve çıkış yap
                                 user.sendEmailVerification().addOnCompleteListener(new OnCompleteListener<Void>() {

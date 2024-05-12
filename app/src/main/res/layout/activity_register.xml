@@ -91,7 +91,7 @@
         android:ems="10"
         android:fontFamily="serif"
         android:padding="10dp"
-        android:hint="Student ID"
+        android:hint="Öğrenci iseniz giriniz"
         android:inputType="text"
         android:textColorHint="#F4EFEF"
         android:textSize="16sp"

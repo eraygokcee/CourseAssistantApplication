@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background"
-    tools:context=".EditProfileActivity">
+    tools:context=".EditProfileTeacher">
 
     <TextView
         android:id="@+id/textView2"
@@ -67,44 +67,6 @@
         app:layout_constraintVertical_bias="0.110000014" />
 
     <EditText
-        android:id="@+id/eStudentID"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:background="@color/design_default_color_primary_dark"
-        android:ems="10"
-        android:fontFamily="serif"
-        android:hint="Student ID"
-        android:inputType="text"
-        android:padding="10dp"
-        android:textColorHint="#F4EFEF"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/eSurname" />
-
-    <EditText
-        android:id="@+id/eDepartment"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:background="@color/design_default_color_primary_dark"
-        android:ems="10"
-        android:fontFamily="serif"
-        android:hint="Department"
-        android:inputType="text"
-        android:padding="10dp"
-        android:textColorHint="#F4EFEF"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/eStudentID" />
-
-    <EditText
         android:id="@+id/ePhone"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -121,7 +83,7 @@
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/eDepartment" />
+        app:layout_constraintTop_toBottomOf="@+id/eSurname" />
 
     <Button
         android:id="@+id/eSaveBtn"

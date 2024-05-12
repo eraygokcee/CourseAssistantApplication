@@ -1,0 +1,50 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <EditText
+        android:id="@+id/courseIdEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Course ID"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/courseNameEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Course Name"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/dateEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Date (YYYY-MM-DD)"
+        android:inputType="date" />
+
+    <EditText
+        android:id="@+id/groupNumbersEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Group Numbers"
+        android:inputType="number" />
+
+    <LinearLayout
+        android:id="@+id/groupContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="16dp">
+        <!-- Dinamik olarak oluşturulacak grupların konteyneri -->
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/createCourseButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Create Course" />
+
+</LinearLayout>

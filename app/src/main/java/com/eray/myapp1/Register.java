@@ -64,12 +64,14 @@ public class Register extends AppCompatActivity {
                 String surname = mSurname.getText().toString();
                 String stdID = mStudentID.getText().toString();
 
+
                 if (TextUtils.isEmpty(email)){
                     mEmail.setError("E mail is required");
                 }
                 if (TextUtils.isEmpty(password)){
                     mPassword.setError("Password is required");
                 }
+                String domain = email.substring(email.indexOf("@") + 1);
 
 
                 fAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
@@ -83,19 +85,36 @@ public class Register extends AppCompatActivity {
                                     if(task.isSuccessful()){
                                         Toast.makeText(Register.this,"Verification Mail has been sent",Toast.LENGTH_SHORT).show();
                                         userID = fAuth.getCurrentUser().getUid();
-                                        DocumentReference documentReference = fstore.collection("users").document(userID);
-                                        Map<String,Object> user = new HashMap<>();
-                                        user.put("name",name);
-                                        user.put("surname",surname);
-                                        user.put("stdID",stdID);
-                                        user.put("email",email);
-                                        user.put("password",password);
-                                        documentReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
-                                            @Override
-                                            public void onSuccess(Void unused) {
-                                                Log.d(TAG,"On Success : User Profile is created for" + userID);
-                                            }
-                                        });
+                                        if(domain.equals("std.yildiz.edu.tr")){
+                                            DocumentReference documentReference = fstore.collection("students").document(userID);
+                                            Map<String,Object> user = new HashMap<>();
+                                            user.put("name",name);
+                                            user.put("surname",surname);
+                                            user.put("stdID",stdID);
+                                            user.put("email",email);
+                                            user.put("password",password);
+                                            documentReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
+                                                @Override
+                                                public void onSuccess(Void unused) {
+                                                    Log.d(TAG,"On Success : User Profile is created for" + userID);
+                                                }
+                                            });
+                                        }
+                                        else if (domain.equals("gmail.com")){
+                                            DocumentReference documentReference = fstore.collection("teachers").document(userID);
+                                            Map<String,Object> user = new HashMap<>();
+                                            user.put("name",name);
+                                            user.put("surname",surname);
+                                            user.put("email",email);
+                                            user.put("password",password);
+                                            documentReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
+                                                @Override
+                                                public void onSuccess(Void unused) {
+                                                    Log.d(TAG,"On Success : User Profile is created for" + userID);
+                                                }
+                                            });
+                                        }
+
                                         startActivity(new Intent(getApplicationContext(),Login.class));
                                     }else{
                                         Toast.makeText(Register.this,"Error ! " + task.getException().getMessage(),Toast.LENGTH_SHORT).show();
