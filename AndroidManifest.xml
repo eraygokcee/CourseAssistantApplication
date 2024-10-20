@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.CourseAssistantApplication"
+        tools:targetApi="31">
+        <activity
+            android:name=".activity.AdminMainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.AddPollsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.ViewExamResponsesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.ViewExamActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.CreateExamActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.PollResultsActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".activity.TakePollActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.ShowPollsStdActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.JoinAttendanceActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.StartAttendanceActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.AddCourseActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.SignUpActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.AddStudentActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.CreateNewReport"
+            android:exported="false" />
+        <activity
+            android:name=".activity.ListReportsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.UpdateProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.ForgetPasswordActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.MyCoursesTeacherActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.ViewProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.LoginActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.course.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+    </application>
+
+</manifest>
